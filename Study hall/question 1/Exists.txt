@@ -1,0 +1,11 @@
+import java.io.IOException;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hbase.*;
+public class TableExists{
+public static void main(String args[])throws IOException{
+Configuration c = HBaseConfiguration.create();      // Instantiate configuration class
+HBaseAdmin ad = new HBaseAdmin(c);      // Instantiate HBaseAdmin class
+Boolean boolean = ad.tableExists("student");       // Cheking the existance of the table
+System.out.println( boolean);
+}
+}
